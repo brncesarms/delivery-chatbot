@@ -1,0 +1,32 @@
+# Ambientes e Segredos
+.env
+*.env.local
+
+# Banco de Dados e Dados Persistentes de Containers
+data/
+hermes_data/*
+!hermes_data/SOUL.md
+!hermes_data/config.yaml
+
+# Mídias e QR Codes temporários
+qrcode_whatsapp.png
+*.ogg
+*.opus
+*.mp3
+
+# Python e Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+*.egg-info/
+
+# Logs
+logs/
+*.log
+
+# Sistema Operacional e IDEs
+.DS_Store
+.idea/
+.vscode/

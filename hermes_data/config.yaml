@@ -1,0 +1,19 @@
+# Configuração do Hermes Agent - Lanchonete (Containerizado)
+model:
+  default: Qwen3.6-35B-A3B-UD-Q4_K_M
+  provider: custom
+  base_url: http://127.0.0.1:18434/v1
+  api_key: gTO1CSQrZuE8WTRLoukoTMTD21vBImX-
+  api_mode: chat_completions
+  context_length: 65536
+
+agent:
+  reasoning_effort: low
+
+terminal:
+  backend: local
+  cwd: /workspace
+
+compression:
+  enabled: true
+  threshold: 0.5

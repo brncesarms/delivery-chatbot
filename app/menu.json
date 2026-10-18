@@ -1,0 +1,125 @@
+{
+  "restaurante": {
+    "nome": "Lanchonete Sabor Real",
+    "telefone_contato": "(11) 99999-9999",
+    "horario_funcionamento": "Terça a Domingo das 18h às 23h30",
+    "taxa_entrega_padrao": 7.00,
+    "chave_pix": "financeiro@lanchonete.com.br"
+  },
+  "lanches": [
+    {
+      "id": "L1",
+      "nome": "X-Burguer Artesanal",
+      "preco": 22.00,
+      "descricao": "Pão brioche selado na manteiga, burger artesanal 160g, queijo prato derretido e maionese da casa.",
+      "aliases": ["x burguer", "x burger", "x-burguer", "x-burger", "burguer", "burger", "l1"]
+    },
+    {
+      "id": "L2",
+      "nome": "X-Salada Especial",
+      "preco": 25.00,
+      "descricao": "Pão brioche, burger artesanal 160g, queijo prato, alface americana fresca, rodelas de tomate e maionese verde.",
+      "aliases": ["x salada", "x-salada", "salada", "l2"]
+    },
+    {
+      "id": "L3",
+      "nome": "X-Bacon Supremo",
+      "preco": 29.50,
+      "descricao": "Pão brioche, burger 160g, cheddar duplo, fatias crocantes de bacon defumado e barbecue artesanal.",
+      "aliases": ["x bacon", "x-bacon", "bacon supremo", "bacon", "l3"]
+    },
+    {
+      "id": "L4",
+      "nome": "X-Egg Bacon",
+      "preco": 31.00,
+      "descricao": "Pão brioche, burger 160g, queijo prato, ovo na chapa, bacon crocante, alface, tomate e maionese.",
+      "aliases": ["x egg", "x egg bacon", "x-egg", "x-egg bacon", "egg bacon", "l4"]
+    },
+    {
+      "id": "L5",
+      "nome": "Monstro Real (Duplo)",
+      "preco": 38.00,
+      "descricao": "Dois burgers de 160g (320g carne), cheddar duplo, muito bacon, cebola caramelizada e maionese da casa.",
+      "aliases": ["monstro", "monstro real", "duplo", "x duplo", "l5"]
+    }
+  ],
+  "porcoes": [
+    {
+      "id": "P1",
+      "nome": "Batata Frita Tradicional (300g)",
+      "preco": 18.00,
+      "descricao": "Batatas palito sequinhas e crocantes temperadas com sal e toque de páprica doce.",
+      "aliases": ["batata", "batata frita", "fritas", "porcao de batata", "p1"]
+    },
+    {
+      "id": "P2",
+      "nome": "Batata Frita Cheddar e Bacon (450g)",
+      "preco": 26.00,
+      "descricao": "Porção generosa de batata frita coberta com molho cheddar cremoso e cubinhos crocantes de bacon.",
+      "aliases": ["batata cheddar", "fritas com cheddar", "batata com cheddar e bacon", "cheddar e bacon", "p2"]
+    },
+    {
+      "id": "P3",
+      "nome": "Nuggets de Frango Crocantes (10 un)",
+      "preco": 20.00,
+      "descricao": "Empanados de frango macios por dentro e super crocantes por fora, acompanha molho barbecue.",
+      "aliases": ["nuggets", "empanados", "nuggets de frango", "p3"]
+    }
+  ],
+  "bebidas": [
+    {
+      "id": "B1",
+      "nome": "Coca-Cola Lata 350ml",
+      "preco": 6.50,
+      "descricao": "Original ou Zero Açúcar (gelada).",
+      "aliases": ["coca", "coca cola", "coca lata", "coca-cola", "coca zero", "b1"]
+    },
+    {
+      "id": "B2",
+      "nome": "Guaraná Antarctica Lata 350ml",
+      "preco": 6.00,
+      "descricao": "Original ou Zero (gelada).",
+      "aliases": ["guarana", "guaraná", "guarana antarctica", "guarana lata", "b2"]
+    },
+    {
+      "id": "B3",
+      "nome": "Suco Natural de Laranja 500ml",
+      "preco": 9.00,
+      "descricao": "Extraído na hora da fruta fresca, sem conservantes.",
+      "aliases": ["suco", "suco de laranja", "laranja", "suco natural", "b3"]
+    },
+    {
+      "id": "B4",
+      "nome": "Água Mineral 500ml",
+      "preco": 4.50,
+      "descricao": "Sem gás ou Com gás.",
+      "aliases": ["agua", "água", "agua mineral", "b4"]
+    }
+  ],
+  "adicionais": [
+    {
+      "id": "A1",
+      "nome": "Hambúrguer Extra 160g",
+      "preco": 9.00,
+      "aliases": ["hamburguer extra", "carne extra", "mais um burger", "a1"]
+    },
+    {
+      "id": "A2",
+      "nome": "Bacon Extra",
+      "preco": 5.00,
+      "aliases": ["bacon extra", "mais bacon", "adicional de bacon", "a2"]
+    },
+    {
+      "id": "A3",
+      "nome": "Cheddar Fatiado Extra",
+      "preco": 4.00,
+      "aliases": ["cheddar extra", "mais queijo", "a3"]
+    },
+    {
+      "id": "A4",
+      "nome": "Pote Maionese Verde da Casa (50ml)",
+      "preco": 3.50,
+      "aliases": ["maionese", "maionese extra", "pote de maionese", "maionese verde", "a4"]
+    }
+  ]
+}

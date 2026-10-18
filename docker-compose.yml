@@ -1,0 +1,97 @@
+version: '3.8'
+
+services:
+  evolution-postgres:
+    image: postgres:15-alpine
+    container_name: lanchonete-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: evolution_db
+      POSTGRES_USER: evolution_user
+      POSTGRES_PASSWORD: evolution_secret_pass
+    volumes:
+      - ./data/postgres_data:/var/lib/postgresql/data
+    networks:
+      - lanchonete_net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U evolution_user -d evolution_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  evolution-redis:
+    image: redis:7-alpine
+    container_name: lanchonete-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes:
+      - ./data/redis_data:/data
+    networks:
+      - lanchonete_net
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  evolution-api:
+    image: evoapicloud/evolution-api:latest
+    container_name: lanchonete-evolution-wpp
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    volumes:
+      - ./data/evolution_instances:/evolution/instances
+      - ./data/evolution_store:/evolution/store
+    depends_on:
+      evolution-postgres:
+        condition: service_healthy
+      evolution-redis:
+        condition: service_healthy
+    networks:
+      - lanchonete_net
+
+  bot:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: lanchonete-bot-core
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - EVOLUTION_API_URL=http://evolution-api:8080
+      - SQLITE_DB_PATH=/app/data/lanchonete.db
+      - MENU_PATH=/app/menu.json
+    volumes:
+      - ./app:/app
+      - ./data/db:/app/data
+      - ./data/audios:/app/audios
+    depends_on:
+      - evolution-api
+    networks:
+      - lanchonete_net
+
+  hermes-lanchonete:
+    image: nousresearch/hermes-agent:latest
+    container_name: hermes-lanchonete
+    restart: unless-stopped
+    network_mode: host
+    command: ["sleep", "infinity"]
+    volumes:
+      - ./hermes_data:/opt/data
+      - /home/brn/whatsapp-lanchonete:/workspace
+    environment:
+      - HERMES_UID=1000
+      - HERMES_GID=1000
+      - HERMES_HOME=/opt/data
+      - HERMES_WRITE_SAFE_ROOT=/opt/data
+
+networks:
+  lanchonete_net:
+    name: lanchonete_net
+    driver: bridge
