@@ -67,7 +67,7 @@ delivery-chatbot/
 
 ### 1. Clonar o Repositório e Configurar o Ambiente
 ```bash
-git clone https://github.com/SEU-USUARIO/delivery-chatbot.git
+git clone https://github.com/brncesarms/delivery-chatbot.git
 cd delivery-chatbot
 cp .env.example .env
 # Edite as variáveis no .env (chaves, nome da lanchonete, taxa de entrega, chave pix)
