@@ -45,6 +45,7 @@ services:
     volumes:
       - ./data/evolution_instances:/evolution/instances
       - ./data/evolution_store:/evolution/store
+      - ./data/evolution_patches/main.js:/evolution/dist/main.js
     depends_on:
       evolution-postgres:
         condition: service_healthy

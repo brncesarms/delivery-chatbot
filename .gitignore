@@ -4,6 +4,8 @@
 
 # Banco de Dados e Dados Persistentes de Containers
 data/
+!data/evolution_patches/
+!data/evolution_patches/**
 hermes_data/*
 !hermes_data/SOUL.md
 !hermes_data/config.yaml
